@@ -6,4 +6,5 @@ export class FakeClient {
 }
 
 const client = new FakeClient();
-export default client;
+export {client};
+export default FakeClient;

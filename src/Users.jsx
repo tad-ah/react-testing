@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
-import client from "./FakeClient";
+import {client} from "./FakeClient";
 
 class Users extends Component {
 

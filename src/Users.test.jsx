@@ -2,7 +2,12 @@ import React from "react";
 import { create } from "react-test-renderer";
 import Users from "./Users";
 import axios from 'axios';
-import FakeClient from "./FakeClient";
+
+// Either
+// import FakeClient from "./FakeClient";
+// or
+import {client} from "./FakeClient";
+
 
 jest.mock("axios");
 jest.mock("./FakeClient");
@@ -17,7 +22,7 @@ describe("Users component", () => {
         axios.get.mockResolvedValue(response);
 
         // Mock sync method call
-        FakeClient.getData.mockImplementation(() => [10, 20, 30]);
+        client.getData.mockImplementation(() => [10, 20, 30]);
 
         const component = create(<Users />);
         const instance = component.getInstance();
